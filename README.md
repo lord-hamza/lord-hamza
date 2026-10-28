@@ -1,127 +1,51 @@
 <p align="center">
-  <img src="./assets/banner.svg" width="100%" alt="Muhammad Hamza, AI Engineer and Python Backend Engineer">
+  <img src="./assets/banner.svg" width="100%" alt="hamza.py: Muhammad Hamza, AI engineer and team lead at Live Chat Global, based in London">
 </p>
 
-<p align="center">
-  <a href="mailto:hamzashahbaz5703@gmail.com"><img src="https://img.shields.io/badge/Email-hamzashahbaz5703%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
-  <img src="https://img.shields.io/badge/Based%20in-London%2C%20UK-131C3A?style=flat-square" alt="Based in London, UK">
-  <img src="https://img.shields.io/badge/Python-7%2B%20years-3776AB?style=flat-square&logo=python&logoColor=white" alt="7+ years of Python">
-  <img src="https://img.shields.io/badge/Clients-US%20%C2%B7%20Canada%20%C2%B7%20EU-6366F1?style=flat-square" alt="Clients in the US, Canada and the EU">
-</p>
+Hi, I'm Hamza. I've been writing Python for over seven years. These days most of that time goes into LLM and RAG systems, plus the backend work it takes to keep them reliable once real customers depend on them.
 
-### 👋 About me
+I lead the AI team at Live Chat Global. We run a multi-tenant support platform where a business builds a bot on its own data during onboarding. The bot then answers customers over chat, email and other channels. I did years of FastAPI and Django work before moving into AI. That turned out to be good training, because most LLM problems in production are really timeout, retry, tenancy and cost problems.
 
-I'm an AI engineer with 7+ years of Python behind me. Right now I lead an AI team at **Live Chat Global**, where we build a multi-tenant customer support platform that answers across chat, email and other channels using Claude, OpenAI and Pinecone. I also led a computer vision product that spots vehicle damage with YOLO and turns it into an itemized repair estimate.
+## At work
 
-I came to AI from backend work. I spent years building APIs in FastAPI and Django, so I care about the boring parts that keep AI features alive in production: retries, timeouts, tenant isolation, validation and cost. I still write most of the hard code myself.
+- Built the AI Autopilot that answers across 4 support channels, grounded in 11 knowledge-base integrations (Python 3.12, FastAPI, the Claude and OpenAI APIs, Pinecone).
+- Claude and OpenAI check each other's answers before anything reaches a customer. We wrote that consensus layer ourselves instead of reaching for LangChain or LlamaIndex, so every step is visible and we're not locked into a vendor.
+- Tenant data never mixes. Retrieval runs in per-tenant Pinecone namespaces, is scoped by org_id and sits behind JWT auth.
+- Our LLM service layer fails over between providers, validates every response and trims tokens. That is what keeps cost per conversation flat under fixed pricing.
+- Led a vehicle damage inspection product: a YOLO model served from FastAPI, a React Native app for taking photos and a Next.js dashboard for reviewers. I designed the three-phase training pipeline. GPT-4o with Pinecone RAG over repair prices turns the detections into itemized estimates.
+- Own the core Python backend for the phone, email and web platform, which is built for high volume and SOC 2.
+- Write the PRDs, implementation guides, model specs and 90-day delivery plans. I also run sprint planning and code review for a cross-functional team.
 
-### 🧠 What I focus on
-
-**AI and machine learning (main focus)**
-
-- **LLM systems in production:** multi-model consensus, provider failover, response validation, structured outputs and token budgets
-- **RAG and search:** Pinecone and pgvector, hybrid keyword plus vector search, reranking and answers with citations
-- **Evaluation and guardrails:** golden question sets, retrieval and answer quality metrics in CI, PII redaction and prompt-injection defence
-- **Agentic AI:** tool use over MCP, multi-step agent flows plus voice and chat agents built with Vapi, Deepgram and ElevenLabs
-- **Computer vision and OCR:** YOLO detection and training pipelines, OpenCV, PaddleOCR and EasyOCR, face verification
-- **Classical ML:** PyTorch, TensorFlow, scikit-learn and Hugging Face models for prediction and classification
-
-**Backend engineering (the foundation)**
-
-- Multi-tenant APIs in FastAPI and Django with JWT and OAuth 2.0, RBAC, webhooks and rate limiting
-- PostgreSQL schema design, indexing and query tuning, plus Redis caching and Celery background jobs
-- Data pipelines: scraping, enrichment and processing datasets with millions of rows, with BigQuery when it helps
-- Docker, CI/CD and cloud deployments on AWS, GCP and Azure
-
-### 💼 Current role
-
-**Team Lead, AI Engineering at Live Chat Global** · Oct 2024 to present · Remote
-
-- Architected an **AI Autopilot** across 4 support channels, grounded in 11 knowledge-base integrations (Python 3.12, FastAPI, the Claude and OpenAI APIs, Pinecone)
-- Designed **multi-model consensus answering**, where Claude and OpenAI responses are cross-checked before delivery to cut hallucinations. It's built without LangChain or LlamaIndex for full control and no vendor lock-in.
-- Built a **multi-tenant RAG layer** with Pinecone namespaces, org-scoped retrieval and JWT auth so every tenant's data stays isolated
-- Built a **resilient LLM service layer** with failover, response validation and token optimization that keeps cost per conversation predictable under flat pricing
-- Led a **vehicle damage inspection platform:** a YOLO detection microservice on FastAPI, a React Native capture app and a Next.js review dashboard, trained through a three-phase pipeline with tuned augmentation and regularization
-- Built **repair cost estimation** with GPT-4o and Pinecone RAG over repair pricing data, turning detected damage into itemized estimates
-- Architected the core **Python backend** for the unified communications platform across phone, email and web, built for high volume and SOC 2 compliance
-- Wrote the PRD, technical implementation guide, AI model specification and 90-day delivery plan. I run sprint planning and code reviews for a cross-functional team.
-
-### 🚀 Featured projects
+## Open source
 
 <table>
 <tr>
-<td width="50%" valign="top">
-
-<a href="https://github.com/lord-hamza/gatewise"><img src="https://raw.githubusercontent.com/lord-hamza/gatewise/main/docs/banner.svg" alt="gatewise"></a>
-
-**[gatewise](https://github.com/lord-hamza/gatewise)** is an async Python LLM gateway in front of OpenAI, Anthropic and any OpenAI-compatible server.
-
-- Failover with jittered backoff that honours `Retry-After`, with timeouts per attempt and per stream chunk
-- Semantic cache scoped per tenant and per conversation, plus per-tenant token budgets
-- PII redaction, prompt-injection detection and Pydantic-validated outputs with automatic repair
-- Only httpx and pydantic at runtime, 113 tests and `mypy --strict`
-
-</td>
-<td width="50%" valign="top">
-
-<a href="https://github.com/lord-hamza/pgcite"><img src="https://raw.githubusercontent.com/lord-hamza/pgcite/main/docs/banner.svg" alt="pgcite"></a>
-
-**[pgcite](https://github.com/lord-hamza/pgcite)** answers questions over your documents and shows where every answer came from, all on PostgreSQL with pgvector.
-
-- BM25 written in SQL plus pgvector HNSW, merged with Reciprocal Rank Fusion
-- A local cross-encoder reranker on CPU and inline `[n]` citations from an extractive or Anthropic backend
-- A CI quality gate on 40 golden questions and 5 metrics: recall@5 **0.963** and MRR **0.872**
-- FastAPI service that logs latency per stage, tokens and cost in Postgres
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top">
-
-**[RepoGraph](https://github.com/lord-hamza/repograph)** is a TypeScript CLI that turns any repository into a graph of files, functions and classes. From that graph it builds an interactive code atlas, a learning roadmap, an AI pipeline security audit and MCP context with a real MCP server so AI assistants can understand the codebase. It runs fully offline.
-
-</td>
+<td width="50%" valign="top"><a href="https://github.com/lord-hamza/gatewise"><img src="https://raw.githubusercontent.com/lord-hamza/gatewise/main/docs/banner.svg" alt="gatewise quickstart code"></a></td>
+<td width="50%" valign="top"><a href="https://github.com/lord-hamza/pgcite"><img src="https://raw.githubusercontent.com/lord-hamza/pgcite/main/docs/banner.svg" alt="pgcite answering a question with a citation"></a></td>
 </tr>
 </table>
 
-### 🛠️ Tech stack
+**[gatewise](https://github.com/lord-hamza/gatewise)** is the gateway I'd want in front of any LLM API. It retries with backoff and respects `Retry-After`, moves to the next provider when one is down, caches repeat questions, keeps each tenant inside a token budget, redacts PII, catches prompt injection and hands back validated Pydantic objects. It only depends on httpx and pydantic at runtime. 113 tests, mypy in strict mode.
 
-**AI, ML and LLMs**
+**[pgcite](https://github.com/lord-hamza/pgcite)** is RAG on plain Postgres. BM25 is written in SQL, vectors live in pgvector and the two result lists are merged with reciprocal rank fusion before a cross-encoder reranks them on CPU. Every answer cites its sources. A 40-question eval runs in CI and fails the build if quality drops. Right now it sits at 0.963 recall@5 and 0.872 MRR.
 
-<img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,sklearn,opencv" alt="Python, PyTorch, TensorFlow, scikit-learn, OpenCV">
+**[RepoGraph](https://github.com/lord-hamza/repograph)** is a TypeScript CLI that turns a codebase into a graph of files, functions and classes. From that it builds an interactive atlas, a learning roadmap, a security audit of the AI pipeline and an MCP server so assistants can work with the whole repo. It runs offline.
 
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square) ![Anthropic Claude](https://img.shields.io/badge/Anthropic%20Claude-191919?style=flat-square&logo=anthropic&logoColor=white) ![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black) ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white) ![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langgraph&logoColor=white) ![LlamaIndex](https://img.shields.io/badge/LlamaIndex-8B5CF6?style=flat-square) ![Pinecone](https://img.shields.io/badge/Pinecone-000000?style=flat-square) ![pgvector](https://img.shields.io/badge/pgvector-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![MCP](https://img.shields.io/badge/MCP-000000?style=flat-square&logo=modelcontextprotocol&logoColor=white) ![YOLO](https://img.shields.io/badge/YOLO-111F68?style=flat-square&logo=ultralytics&logoColor=white) ![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white) ![AWS Bedrock](https://img.shields.io/badge/AWS%20Bedrock-232F3E?style=flat-square) ![Azure OpenAI](https://img.shields.io/badge/Azure%20OpenAI-0078D4?style=flat-square) ![AbacusAI](https://img.shields.io/badge/AbacusAI-4B5563?style=flat-square) ![PaddleOCR](https://img.shields.io/badge/PaddleOCR%20%C2%B7%20EasyOCR-4B5563?style=flat-square)
+## Stack
 
-**Voice, agents and automation**
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,opencv,fastapi,django,postgres,redis,mongodb,docker,kubernetes,aws,gcp,azure,githubactions&perline=15" alt="Python, PyTorch, TensorFlow, OpenCV, FastAPI, Django, PostgreSQL, Redis, MongoDB, Docker, Kubernetes, AWS, GCP, Azure, GitHub Actions">
+</p>
 
-![Vapi](https://img.shields.io/badge/Vapi-5B21B6?style=flat-square) ![Deepgram](https://img.shields.io/badge/Deepgram-13EF93?style=flat-square&logo=deepgram&logoColor=black) ![ElevenLabs](https://img.shields.io/badge/ElevenLabs-000000?style=flat-square&logo=elevenlabs&logoColor=white) ![Twilio](https://img.shields.io/badge/Twilio-F22F46?style=flat-square) ![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white) ![Power Automate](https://img.shields.io/badge/Power%20Automate-0066FF?style=flat-square)
+**AI and ML:** OpenAI and Anthropic APIs, LangChain, LangGraph, LlamaIndex, Hugging Face, PyTorch, TensorFlow, scikit-learn, MLflow, Pinecone, pgvector, YOLO, OpenCV, PaddleOCR, EasyOCR, face verification, MCP, AWS Bedrock, Azure OpenAI, AbacusAI<br>
+**Voice and automation:** Vapi, Deepgram, ElevenLabs, Twilio, n8n, Power Automate<br>
+**Backend:** Python, FastAPI, Django with DRF, Flask, Pydantic, Celery, Node.js, JWT and OAuth 2.0, RBAC, webhooks, rate limiting<br>
+**Data:** PostgreSQL, Redis, MongoDB, MySQL, SQLite, SQL Server, BigQuery, Selenium, BeautifulSoup, Scrapy<br>
+**Infra:** AWS, GCP, Azure, Docker, Kubernetes, GitHub Actions, PM2, Linux<br>
+**Testing and tools:** pytest, Jest, Postman, Swagger, Git, Jira, ClickUp, Slack
 
-**Backend and APIs**
+## How I work
 
-<img src="https://skillicons.dev/icons?i=fastapi,django,flask,nodejs" alt="FastAPI, Django, Flask, Node.js">
+I like small pull requests, written specs and evals that run on every push. On my team we plan in sprints, track work in Jira or ClickUp and review every change before it merges. I mentor the newer engineers on Python and on wiring models into products without making a mess. I still pick up the gnarly tickets myself. Most of my clients have been in the US, Canada and the EU, so working async across time zones is normal for me.
 
-![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=flat-square&logo=pydantic&logoColor=white) ![Django REST Framework](https://img.shields.io/badge/Django%20REST%20Framework-A30000?style=flat-square) ![Celery](https://img.shields.io/badge/Celery-37814A?style=flat-square&logo=celery&logoColor=white) ![JWT / OAuth 2.0](https://img.shields.io/badge/JWT%20%2F%20OAuth%202.0-000000?style=flat-square&logo=jsonwebtokens&logoColor=white) ![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=flat-square&logo=swagger&logoColor=black)
-
-**Data**
-
-<img src="https://skillicons.dev/icons?i=postgres,redis,mongodb,mysql,sqlite,selenium" alt="PostgreSQL, Redis, MongoDB, MySQL, SQLite, Selenium">
-
-![BigQuery](https://img.shields.io/badge/BigQuery-669DF6?style=flat-square&logo=googlebigquery&logoColor=white) ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=flat-square) ![Scrapy](https://img.shields.io/badge/Scrapy-60A839?style=flat-square&logo=scrapy&logoColor=white) ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-4B5563?style=flat-square)
-
-**Cloud, DevOps and testing**
-
-<img src="https://skillicons.dev/icons?i=aws,gcp,azure,docker,kubernetes,githubactions,linux,git,postman,jest" alt="AWS, GCP, Azure, Docker, Kubernetes, GitHub Actions, Linux, Git, Postman, Jest">
-
-![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white) ![PM2](https://img.shields.io/badge/PM2-2B037A?style=flat-square&logo=pm2&logoColor=white) ![Jira](https://img.shields.io/badge/Jira-0052CC?style=flat-square&logo=jira&logoColor=white) ![ClickUp](https://img.shields.io/badge/ClickUp-7B68EE?style=flat-square&logo=clickup&logoColor=white) ![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat-square)
-
-### 🤝 How I work
-
-- **Agile delivery:** I plan sprints, break work into tickets in Jira or ClickUp and keep the team shipping in small steady increments
-- **Product thinking:** I write PRDs, technical implementation guides, AI model specs and delivery plans before the first line of code
-- **Leading engineers:** I review code, mentor juniors on Python and AI integration patterns and stay hands-on in the codebase myself
-- **Working with clients:** I've delivered for clients in the US, Canada and the EU, so I'm used to async communication across time zones
-- **Ownership:** I like owning a system end to end, from architecture and deployment to monitoring and iteration
-
-### 📫 Get in touch
-
-The easiest way to reach me is [hamzashahbaz5703@gmail.com](mailto:hamzashahbaz5703@gmail.com). I'm always happy to talk about LLM systems, RAG, agents and the backends that keep them running.
+Email is the best way to reach me: [hamzashahbaz5703@gmail.com](mailto:hamzashahbaz5703@gmail.com)
