@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.svg" width="100%" alt="hamza.py: Muhammad Hamza, AI engineer and team lead at Live Chat Global, based in London">
+  <img src="./assets/hamza.svg" width="100%" alt="hamza.py: Muhammad Hamza, AI engineer and team lead at Live Chat Global, based in London">
 </p>
 
 Hi, I'm Hamza. I've been writing Python for over seven years. These days most of that time goes into LLM and RAG systems, plus the backend work it takes to keep them reliable once real customers depend on them.
@@ -20,8 +20,8 @@ I lead the AI team at Live Chat Global. We run a multi-tenant support platform w
 
 <table>
 <tr>
-<td width="50%" valign="top"><a href="https://github.com/lord-hamza/gatewise"><img src="https://raw.githubusercontent.com/lord-hamza/gatewise/main/docs/banner.svg" alt="gatewise quickstart code"></a></td>
-<td width="50%" valign="top"><a href="https://github.com/lord-hamza/pgcite"><img src="https://raw.githubusercontent.com/lord-hamza/pgcite/main/docs/banner.svg" alt="pgcite answering a question with a citation"></a></td>
+<td width="50%" valign="top"><a href="https://github.com/lord-hamza/gatewise"><img src="https://raw.githubusercontent.com/lord-hamza/gatewise/main/docs/quickstart.svg" alt="gatewise quickstart code"></a></td>
+<td width="50%" valign="top"><a href="https://github.com/lord-hamza/pgcite"><img src="https://raw.githubusercontent.com/lord-hamza/pgcite/main/docs/ask.svg" alt="pgcite answering a question with a citation"></a></td>
 </tr>
 </table>
 
